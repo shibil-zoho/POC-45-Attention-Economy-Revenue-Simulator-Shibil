@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --bg-obsidian: #030712;
+    --surface-navy: #0B1117;
+    --accent-cyan: #38BDF8;
+    --accent-indigo: #818CF8;
+    --border-slate: #1F2937;
+  }
+
+  body {
+    background-color: #030712 !important;
+    color: #F3F4F6;
+    font-family: var(--font-geist-sans), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.015em;
+    overflow-x: hidden;
+  }
+}
+
+/* Real Rails Terminal Aesthetics & Glassmorphism */
+.real-rails-card {
+  background-color: #0B1117;
+  border: 1px solid #1F2937;
+  backdrop-filter: blur(8px);
+  border-radius: 0.5rem;
+}
+
+.real-rails-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 15px -3px rgba(56, 189, 248, 0.15);
+}
+
+.real-rails-glow-cyan {
+  box-shadow: 0 0 15px -2px rgba(56, 189, 248, 0.45);
+}
+
+.real-rails-glow-indigo {
+  box-shadow: 0 0 15px -2px rgba(129, 140, 248, 0.45);
+}
+
+.real-rails-glow-border {
+  border-color: #38BDF8 !important;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+/* Custom terminal scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38BDF8;
+}
+
+/* Leaflet Dark Mode Map Styling */
+.leaflet-container {
+  background: #030712 !important;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+.leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(3) hue-rotate(200deg) saturate(0.35);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0B1117 !important;
+  color: #F3F4F6 !important;
+  border: 1px solid #38BDF8 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0B1117 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #9CA3AF !important;
+}
+
+/* Custom Range Input Styling for Sensitivity Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: #1F2937;
+  border-radius: 4px;
+  height: 6px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #38BDF8;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  border: 2px solid #030712;
+  transition: all 0.15s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 1);
+}
